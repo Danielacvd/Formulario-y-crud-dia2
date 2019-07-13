@@ -1,0 +1,11 @@
+<h1>mostrar la descripcion del todo</h1>
+<%= @todo.description%>
+<br>
+<%= @todo.completed%>
+<p>Esta completado?</p>
+<br>
+<% if @todo.completed == 1 %>
+  <label> Realizado</label>
+<% else%>
+  <label> Pendiente</label>
+<% end %>

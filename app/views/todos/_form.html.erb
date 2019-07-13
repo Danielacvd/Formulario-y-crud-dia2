@@ -1,0 +1,15 @@
+<h1>Formulario Para la creaacion del ToDo</h1>
+<br>
+
+<%= form_with model: @todo, local: true do |f| %>
+  <br>
+  <%= f.label :description, "Ingresa la description"%>
+  <%= f.text_field :description, class: 'form-control' %>
+  <!-- <br>
+  <%= f.label :completed, "CheckBox completed"%>
+  <%= f.check_box :completed %> -->
+  <br>
+  <%= f.submit "Agregar Tarea", class: 'btn btn-primary'%>
+
+<% end %>
+<%= link_to "volver", todos_path%>

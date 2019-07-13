@@ -1,0 +1,25 @@
+<h1>Index de la app</h1>
+<%= link_to "agregar nueva tarea", todos_new_path, class: 'btn btn-primary'%>
+<!-- listar todo con un .each y listar todo en un well -->
+<br>
+<%= link_to "listado", todo_list_path%>
+<% @todos.each do |t|%>
+  <div class="card card-body bg-light">
+    <%=t.description %>
+    <%= link_to "Ver tarea", t, class: 'btn btn-info'%>
+    <%= link_to "Editar tarea", edit_path(t), class: 'btn btn-info'%>
+    <%= link_to "Eliminar tarea", t,method: :delete, class: 'btn btn-info'%>
+
+  </div>
+  <% if t.completed == true %>
+    <label> Realizado</label>
+  <% else%>
+    <label> Pendiente</label>
+  <% end %>
+  <div class="container">
+    <%= link_to "Tarea realizado", tarea_completa_path(t), class: 'btn btn-info'%>
+
+  </div>
+<% end %>
+
+<%= link_to "agregar nueva tarea", todos_new_path, class: 'btn btn-primary'%>
