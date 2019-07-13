@@ -1,25 +1,27 @@
-<h1>Index de la app</h1>
-<%= link_to "agregar nueva tarea", todos_new_path, class: 'btn btn-primary'%>
+<h1 class="mt-5">Index de la app</h1>
 <!-- listar todo con un .each y listar todo en un well -->
 <br>
-<%= link_to "listado", todo_list_path%>
-<% @todos.each do |t|%>
-  <div class="card card-body bg-light">
-    <%=t.description %>
-    <%= link_to "Ver tarea", t, class: 'btn btn-info'%>
-    <%= link_to "Editar tarea", edit_path(t), class: 'btn btn-info'%>
-    <%= link_to "Eliminar tarea", t,method: :delete, class: 'btn btn-info'%>
 
-  </div>
+<% @todos.each do |t|%>
+  <div class="dia card card-body m-5">
+    <p><%=t.description %></p>
+    <%= link_to "Ver tarea", t, class: 'btn btn-info'%>
+    <%= link_to "Editar tarea", edit_path(t), class: 'btn btn-success'%>
+    <%= link_to "Eliminar tarea", t,method: :delete, class: 'btn btn-warning'%>
+
   <% if t.completed == true %>
-    <label> Realizado</label>
+    <p><label> Realizado</label></p>
   <% else%>
-    <label> Pendiente</label>
+    <p><label> Pendiente</label></p>
   <% end %>
   <div class="container">
-    <%= link_to "Tarea realizado", tarea_completa_path(t), class: 'btn btn-info'%>
+    <%= link_to "Click para realizar la tarea", tarea_completa_path(t), class: 'btn btn-info'%>
 
   </div>
+</div>
 <% end %>
+<div class="m-5 text-center">
 
-<%= link_to "agregar nueva tarea", todos_new_path, class: 'btn btn-primary'%>
+  <%= link_to "agregar nueva tarea", todos_new_path, class: 'btn btn-primary'%>
+  <%= link_to "listado", todo_list_path, class: 'btn btn-primary'%>
+</div>

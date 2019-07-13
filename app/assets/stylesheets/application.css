@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ body{
+   background-color: black;
+   color: white;
+ }
+ p{
+   color: black;
+ }
+ .p1{
+   color: white;
+ }
+ .dia{
+   background-color: gray;
+ }

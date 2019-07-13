@@ -1,10 +1,8 @@
-<h1>mostrar la descripcion del todo</h1>
-<%= @todo.description%>
+<h1 class="m-5">Mostrar la descripcion de la tarea</h1>
+<p class="p1">La tarea :<%= @todo.description%></p>
+<p class="p1">Esta completada?</p>
 <br>
-<%= @todo.completed%>
-<p>Esta completado?</p>
-<br>
-<% if @todo.completed == 1 %>
+<% if @todo.completed == true %>
   <label> Realizado</label>
 <% else%>
   <label> Pendiente</label>
