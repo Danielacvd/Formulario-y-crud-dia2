@@ -1,5 +1,5 @@
 <h1 class="m-5">Lista y Estado de las tareas</h1>
-<div class="row">
+<div class="row container m-5">
   <div class="col-6">
     Pendiente
     <% @todos.each do |t|%>
@@ -22,6 +22,8 @@
     <% end%>
   </div>
 
-
+</div>
+<div class="container m-5">
+  <%= link_to "Volver al index", todos_index_path, class: 'btn btn-primary'%>
 
 </div>

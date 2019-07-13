@@ -4,15 +4,15 @@
 
 <% @todos.each do |t|%>
   <div class="dia card card-body m-5">
-    <p><%=t.description %></p>
-    <%= link_to "Ver tarea", t, class: 'btn btn-info'%>
-    <%= link_to "Editar tarea", edit_path(t), class: 'btn btn-success'%>
-    <%= link_to "Eliminar tarea", t,method: :delete, class: 'btn btn-warning'%>
+    <p class="text-center"><%=t.description %></p>
+    <%= link_to "Ver tarea", t, class: 'btn btn-info btn-outline-light'%>
+    <%= link_to "Editar tarea", edit_path(t), class: 'btn btn-success btn-outline-light'%>
+    <%= link_to "Eliminar tarea", t,method: :delete, class: 'btn btn-warning btn-outline-light '%>
 
   <% if t.completed == true %>
-    <p><label> Realizado</label></p>
+    <p class="text-center"><label> Realizado</label></p>
   <% else%>
-    <p><label> Pendiente</label></p>
+    <p class="text-center"><label> Pendiente</label></p>
   <% end %>
   <div class="container">
     <%= link_to "Click para realizar la tarea", tarea_completa_path(t), class: 'btn btn-info'%>
